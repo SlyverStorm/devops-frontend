@@ -2,5 +2,5 @@ services:
   devops-frontend:
     image: slyverstorm16/devops-frontend:latest
     ports:
-      - "80:4300"
+      - "80:80"
     restart: always
