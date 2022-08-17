@@ -20,14 +20,14 @@ node {
     stage("Building docker images") {
         sh '''
             version=`cat package.json | grep -oP '(?<=\"version\": \")[^\"]*'`
-            docker build -t slyverstorm16/devops-frontend:$version .
+            docker build -t slyverstorm16/devops-frontend:latest,$version .
         '''
     }
 
     stage("Push docker images") {
         sh '''
             version=`cat package.json | grep -oP '(?<=\"version\": \")[^\"]*'`
-            docker push slyverstorm16/devops-frontend:$version
+            docker push slyverstorm16/devops-frontend:latest,$version
         '''
     }
 
